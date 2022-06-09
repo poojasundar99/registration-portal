@@ -9,17 +9,14 @@ import springfox.documentation.spring.web.plugins.Docket;
 @Configuration
 public class SwaggerConfig {
 
-    @Configuration
-    public class AppConfig {
-
         @Bean
         public Docket api() {
             return new Docket(DocumentationType.SWAGGER_2)
                     .select()
-                    .apis(RequestHandlerSelectors.basePackage("com.example.registration-portal"))
+                    .apis(RequestHandlerSelectors.any())
                     .build();
-//        http://localhost:8080/demo11/swagger-ui/#/
+
         }
     }
-}
+
 
